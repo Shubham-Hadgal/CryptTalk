@@ -1,10 +1,7 @@
 import 'dart:convert';
-
 import 'package:cryptalk/enc_dec/des/des.dart';
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:encrypt/encrypt.dart' as enc;
-import '../enc_dec/aes/aes.dart';
 
 class DesEncryption extends StatefulWidget {
   const DesEncryption({Key? key}) : super(key: key);
