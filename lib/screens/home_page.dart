@@ -15,6 +15,8 @@ class _HomeState extends State<Home> {
     // double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
+      // backgroundColor: Colors.black87,
+      backgroundColor: Color(0xFF242424),
       appBar: AppBar(
         title: Container(
           padding: const EdgeInsets.only(left: 20.0),
@@ -45,6 +47,7 @@ class _HomeState extends State<Home> {
                       textStyle: Theme.of(context).textTheme.headline4,
                       fontSize: 20.0,
                       fontWeight: FontWeight.w700,
+                      color: Colors.white70
                     ),
                   ),
                 ),
@@ -52,7 +55,7 @@ class _HomeState extends State<Home> {
             ],
           ),
           Positioned(
-            top: width/1.3,
+            top: width/0.8,
             child: Column(
               children: [
                 Container(
