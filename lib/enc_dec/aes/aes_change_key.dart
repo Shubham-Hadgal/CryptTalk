@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -71,7 +70,7 @@ class _AesChangeKeyState extends State<AesChangeKey> {
                 Container(
                     padding: EdgeInsets.only(left: 10.0),
                     child: Text('Enter the key',
-                        style: TextStyle(fontWeight: FontWeight.bold))),
+                        style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white70))),
                 Spacer(),
                 Container(
                     padding: EdgeInsets.only(right: 10.0),
@@ -86,10 +85,12 @@ class _AesChangeKeyState extends State<AesChangeKey> {
             TextField(
               cursorHeight: 20,
               autofocus: false,
+              style: TextStyle(color: Colors.white),
               controller: textEditingController1,
               onChanged: _onChanged,
               decoration: InputDecoration(
                 hintText: "Must be in length of 16, 24, 32 characters..",
+                hintStyle: TextStyle(color: Colors.white70),
                 contentPadding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 border: OutlineInputBorder(
@@ -139,7 +140,7 @@ class _AesChangeKeyState extends State<AesChangeKey> {
               const Color(0xFFFFFFFF),
             ),
             backgroundColor: MaterialStateProperty.all<Color>(
-              const Color(0xFF767676),
+              const Color(0xFF4F4F4F),
             ),
           ),
         ),
@@ -155,14 +156,14 @@ class _AesChangeKeyState extends State<AesChangeKey> {
               Container(
                 padding: const EdgeInsets.all(10.0),
                 child: Text('Your Current Key :',
-                    style: TextStyle(fontWeight: FontWeight.bold)),
+                    style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white70)),
               ),
               Spacer(),
               IconButton(
                   onPressed: () {
                     Clipboard.setData(ClipboardData(text: Keys._key));
                   },
-                  icon: Icon(Icons.copy_rounded, size: 24.0)),
+                  icon: Icon(Icons.copy_rounded, size: 24.0, color: Colors.white70,)),
             ],
           ),
           SizedBox(
@@ -170,11 +171,11 @@ class _AesChangeKeyState extends State<AesChangeKey> {
             width: width / 0.7,
             child: Container(
               decoration: BoxDecoration(
-                  color: Colors.black12,
+                  color: const Color(0xFF414141),
                   borderRadius: BorderRadius.all(Radius.circular(10.0))),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text(Keys._key, style: TextStyle(fontSize: 18.0)),
+                child: Text(Keys._key, style: TextStyle(fontSize: 18.0, color: Colors.white)),
               ),
             ),
           ),
@@ -182,6 +183,7 @@ class _AesChangeKeyState extends State<AesChangeKey> {
       ),
     );
     return Scaffold(
+      backgroundColor: Color(0xFF242424),
       appBar: AppBar(
         title: Container(
           padding: const EdgeInsets.only(left: 10.0),

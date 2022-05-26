@@ -248,7 +248,7 @@ class _DesEncryptionState extends State<DesEncryption> {
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                color: Colors.black12,
+                color: const Color(0xFF414141),
               ),
               child: Container(padding: EdgeInsets.all(10.0),child: Text(decryptedMsg, style: (TextStyle(fontSize: 16.0, color: Colors.white)))),
             ),

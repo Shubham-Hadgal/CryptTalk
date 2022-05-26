@@ -1,9 +1,6 @@
-import 'package:cryptalk/enc_dec/des/des.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../aes/aes_change_key.dart';
 
 class DesKeys {
   static String _key = '';
@@ -70,7 +67,7 @@ class _DesChangeKeyState extends State<DesChangeKey> {
           children: [
             Row(
               children: [
-                Container(padding: EdgeInsets.only(left: 10.0),child: Text('Enter the key', style: TextStyle(fontWeight: FontWeight.bold))),
+                Container(padding: EdgeInsets.only(left: 10.0),child: Text('Enter the key', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white70))),
                 Spacer(),
                 Container(padding: EdgeInsets.only(right: 10.0),child: Text('$charLength', style: TextStyle(fontSize: 16, color: Colors.green, fontWeight: FontWeight.bold))),
               ],
@@ -79,10 +76,12 @@ class _DesChangeKeyState extends State<DesChangeKey> {
             TextField(
               cursorHeight: 20,
               autofocus: false,
+              style: TextStyle(color: Colors.white),
               controller: textEditingController1,
               onChanged: _onChanged,
               decoration: InputDecoration(
                 hintText: "Must be in length of 16, 24, 32 characters..",
+                hintStyle: TextStyle(color: Colors.white70),
                 contentPadding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15),
@@ -128,7 +127,7 @@ class _DesChangeKeyState extends State<DesChangeKey> {
           ),
           style: ButtonStyle(
             foregroundColor: MaterialStateProperty.all<Color>(const Color(0xFFFFFFFF),),
-            backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF767676),),
+            backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFF4F4F4F),),
           ),
         ),
       ),
@@ -143,14 +142,14 @@ class _DesChangeKeyState extends State<DesChangeKey> {
               Container(
                 padding: const EdgeInsets.all(10.0),
                 child: Text('Your Current Key :',
-                    style: TextStyle(fontWeight: FontWeight.bold)),
+                    style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white70)),
               ),
               Spacer(),
               IconButton(
                   onPressed: () {
                     Clipboard.setData(ClipboardData(text: DesKeys._key));
                   },
-                  icon: Icon(Icons.copy_rounded, size: 24.0)),
+                  icon: Icon(Icons.copy_rounded, size: 24.0, color: Colors.white70)),
             ],
           ),
           SizedBox(
@@ -158,11 +157,11 @@ class _DesChangeKeyState extends State<DesChangeKey> {
             width: width / 0.7,
             child: Container(
               decoration: BoxDecoration(
-                  color: Colors.black12,
+                  color: const Color(0xFF414141),
                   borderRadius: BorderRadius.all(Radius.circular(10.0))),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text(DesKeys._key, style: TextStyle(fontSize: 18.0)),
+                child: Text(DesKeys._key, style: TextStyle(fontSize: 18.0, color: Colors.white)),
               ),
             ),
           ),
@@ -170,6 +169,7 @@ class _DesChangeKeyState extends State<DesChangeKey> {
       ),
     );
     return Scaffold(
+      backgroundColor: Color(0xFF242424),
       appBar: AppBar(
         title: Container(
           padding: const EdgeInsets.only(left: 10.0),
